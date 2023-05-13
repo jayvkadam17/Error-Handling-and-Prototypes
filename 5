@@ -1,0 +1,27 @@
+
+In the `Employee` class, we define a constructor that takes the `name`, `position`, and `salary` as arguments and assigns them to respective properties of the instance (`this`).
+
+We also define a method called `getSalary` that returns the `salary` property of the instance.
+
+In the example usage, we create an instance of the `Employee` class with the provided values and call the `getSalary` method. The returned salary is logged to the console.
+
+5. Implementing a Person Class with Default Values:
+
+```javascript
+class Person {
+  constructor(name = "Unknown", age = 0) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails() {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  }
+}
+
+// Example usage:
+const person1 = new Person("John Doe", 25);
+console.log(person1.getDetails()); // Output: Name: John Doe, Age: 25
+
+const person2 = new Person();
+console.log(person2.getDetails()); // Output: Name: Unknown, Age: 0
