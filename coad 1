@@ -1,0 +1,17 @@
+function convertToNumber(str) {
+  const number = Number(str);
+  
+  if (isNaN(number)) {
+    throw new Error("Invalid number");
+  }
+  
+  return number;
+}
+
+// Example usage:
+try {
+  const result = convertToNumber("123");
+  console.log(result); // Output: 123
+} catch (error) {
+  console.log(error.message); // Output: Invalid number
+}
