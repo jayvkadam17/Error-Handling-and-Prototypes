@@ -1,0 +1,27 @@
+function filterByCategory(products) {
+  return function(category) {
+    return products.filter(product => product.category === category);
+  }
+}
+
+// Example usage:
+const products = [
+  { name: "Product 1", category: "Category A" },
+  { name: "Product 2", category: "Category B" },
+  { name: "Product 3", category: "Category A" },
+  { name: "Product 4", category: "Category C" }
+];
+
+const filterProductsByCategory = filterByCategory(products);
+
+const categoryAProducts = filterProductsByCategory("Category A");
+console.log(categoryAProducts);
+// Output: [{ name: "Product 1", category: "Category A" }, { name: "Product 3", category: "Category A" }]
+
+const categoryBProducts = filterProductsByCategory("Category B");
+console.log(categoryBProducts);
+// Output: [{ name: "Product 2", category: "Category B" }]
+
+const categoryCProducts = filterProductsByCategory("Category C");
+console.log(categoryCProducts);
+// Output: [{ name: "Product 4", category: "Category C" }]
