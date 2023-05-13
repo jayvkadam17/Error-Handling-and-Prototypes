@@ -1,0 +1,24 @@
+function getPerson(person) {
+  if (typeof person !== "object" || !person.name || !person.age) {
+    throw new Error("Invalid parameter type");
+  }
+  
+  return `Name: ${person.name}, Age: ${person.age}`;
+}
+
+// Example usage:
+try {
+  const person = { name: "John Doe", age: 25 };
+  const result = getPerson(person);
+  console.log(result); // Output: Name: John Doe, Age: 25
+} catch (error) {
+  console.log(error.message); // Output: (no error)
+}
+
+try {
+  const invalidPerson = { age: 25 };
+  const result = getPerson(invalidPerson);
+  console.log(result);
+} catch (error) {
+  console.log(error.message); // Output: Invalid parameter type
+}
